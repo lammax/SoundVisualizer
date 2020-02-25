@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-let numberOfSamples: Int = 10
+let numberOfSamples: Int = 7
 
 struct ContentView: View {
     // 1
