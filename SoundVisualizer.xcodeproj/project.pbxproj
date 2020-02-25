@@ -13,6 +13,7 @@
 		04765172240511CD000DDFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04765171240511CD000DDFF5 /* Assets.xcassets */; };
 		04765175240511CD000DDFF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04765174240511CD000DDFF5 /* Preview Assets.xcassets */; };
 		04765178240511CD000DDFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04765176240511CD000DDFF5 /* LaunchScreen.storyboard */; };
+		0476518024051294000DDFF5 /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476517F24051294000DDFF5 /* MicrophoneMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		04765174240511CD000DDFF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04765177240511CD000DDFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04765179240511CD000DDFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0476517F24051294000DDFF5 /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				04765176240511CD000DDFF5 /* LaunchScreen.storyboard */,
 				04765179240511CD000DDFF5 /* Info.plist */,
 				04765173240511CD000DDFF5 /* Preview Content */,
+				0476517F24051294000DDFF5 /* MicrophoneMonitor.swift */,
 			);
 			path = SoundVisualizer;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				0476516C240511CA000DDFF5 /* AppDelegate.swift in Sources */,
 				0476516E240511CA000DDFF5 /* SceneDelegate.swift in Sources */,
+				0476518024051294000DDFF5 /* MicrophoneMonitor.swift in Sources */,
 				04765170240511CA000DDFF5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
