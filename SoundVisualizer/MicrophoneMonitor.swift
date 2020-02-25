@@ -22,7 +22,8 @@ class MicrophoneMonitor: ObservableObject {
     @Published public var soundSamples: [Float]
     
     init(numberOfSamples: Int) {
-        self.numberOfSamples = numberOfSamples // In production check this is > 0.
+        guard numberOfSamples > 0 else { fatalError("Number of samples should be > 0") }
+        self.numberOfSamples = numberOfSamples
         self.soundSamples = [Float](repeating: .zero, count: numberOfSamples)
         self.currentSample = 0
         
@@ -71,6 +72,7 @@ class MicrophoneMonitor: ObservableObject {
     // 8
     deinit {
         timer?.invalidate()
+        timer = nil
         audioRecorder.stop()
     }
 }
