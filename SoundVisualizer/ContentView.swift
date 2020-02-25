@@ -20,15 +20,21 @@ struct ContentView: View {
         
         return CGFloat(level * (300 / 25)) // scaled to max at 300 (our height of our bar)
     }
-    
+    private func normalizeOpacity(_ level: CGFloat, maxLevel: CGFloat) -> Double {
+        return Double(level / 200.0) // scaled to max at 300 (our height of our bar)
+    }
+
     var body: some View {
         VStack {
             Text("\(normalizeSoundLevel(mic.soundSamples.max() ?? 0.0))")
              // 3
-            HStack(spacing: 4) {
+            HStack(spacing: CGFloat(4.0)) {
                  // 4
                 ForEach(mic.soundSamples, id: \.self) { level in
-                    BarView(value: self.normalizeSoundLevel(level))
+                    BarView(
+                        value: self.normalizeSoundLevel(level),
+                        opacity: self.normalizeOpacity(self.normalizeSoundLevel(level), maxLevel: self.normalizeSoundLevel(self.mic.soundSamples.max() ?? 0.0))
+                    )
                 }
             }
         }
@@ -38,6 +44,8 @@ struct ContentView: View {
 struct BarView: View {
    // 1
     var value: CGFloat
+    var opacity: Double
+    
 
     var body: some View {
         ZStack {
@@ -47,7 +55,7 @@ struct BarView: View {
                                      startPoint: .top,
                                      endPoint: .bottom))
                 //.luminanceToAlpha()
-                .opacity(0.5)
+                .opacity(opacity)
                 // 3
                 .frame(width: (UIScreen.main.bounds.width - CGFloat(numberOfSamples) * 4) / CGFloat(numberOfSamples), height: value)
         }
